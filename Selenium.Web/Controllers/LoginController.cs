@@ -19,7 +19,7 @@ namespace Selenium.Web.Controllers
         [HttpPost]
         public ActionResult Index(LoginModel model)
         {
-            var isSuccess = model.CheckLogin();
+            model.CheckLogin();
             return View(model);
         }
     }

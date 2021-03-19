@@ -11,17 +11,22 @@ namespace Selenium.Web.Models
         public string Password { get; set; }
         public bool LoginSuccess { get; set; }
 
-        public bool CheckLogin()
+        /// <summary>
+        /// 檢查登入
+        /// </summary>
+        /// <returns></returns>
+        public void CheckLogin()
         {
-            if (Name == "abc" && Password == "abc")
-            {
-                LoginSuccess = true;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            LoginSuccess = Auth();
+        }
+
+        /// <summary>
+        /// 驗證身份
+        /// </summary>
+        /// <returns></returns>
+        private bool Auth()
+        {
+            return Name == "abc" && Password == "abc";
         }
     }
 }
