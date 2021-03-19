@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Selenium.Web.Models
 {
-    public class BlackCat
+    public class BlackCat : ILogistics
     {
         private double _fee;
         private readonly string _companyName = "黑貓";

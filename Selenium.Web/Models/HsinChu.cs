@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Selenium.Web.Models
 {
-    public class HsinChu
+    public class HsinChu : ILogistics
     {
         private double _fee;
         private readonly string _companyName = "新竹貨運";

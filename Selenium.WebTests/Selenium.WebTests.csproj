@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Models\BlackCatTests.cs" />
     <Compile Include="Models\HsinChuTests.cs" />
+    <Compile Include="Models\LogisticsTests.cs" />
     <Compile Include="Models\PostOfficeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

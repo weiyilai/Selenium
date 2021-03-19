@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Selenium.Web.Models
 {
-    public class PostOffice
+    public class PostOffice : ILogistics
     {
         private double _fee;
         private readonly string _companyName = "郵局";
