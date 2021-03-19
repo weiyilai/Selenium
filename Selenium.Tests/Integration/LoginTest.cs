@@ -24,15 +24,30 @@ namespace Selenium.Tests.Integration
         [TestInitialize()]
         public void SetUp()
         {
-            driver = new ChromeDriver();
-            js = (IJavaScriptExecutor)driver;
-            vars = new Dictionary<string, object>();
+            try
+            {
+                driver = new ChromeDriver();
+                js = (IJavaScriptExecutor)driver;
+                vars = new Dictionary<string, object>();
+            }
+            catch (Exception ex)
+            {
+                // 發生例外狀況釋放driver資源
+                driver.Dispose();
+            }
         }
 
         [TestCleanup()]
         public void TearDown()
         {
-            driver.Quit();
+            try
+            {
+                driver.Quit();
+            }
+            catch (Exception ex)
+            {
+                // ignore errors if unable to close the browser
+            }
         }
 
         [TestMethod()]
@@ -52,6 +67,7 @@ namespace Selenium.Tests.Integration
             }
             catch (Exception ex)
             {
+                // 發生例外狀況釋放driver資源
                 driver.Dispose();
             }
         }
