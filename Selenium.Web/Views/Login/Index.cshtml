@@ -1,0 +1,42 @@
+﻿@model Selenium.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<form id="form-login" method="post">
+    <table>
+        <tr>
+            <th>name</th>
+            <td>
+                <input type="text" name="Name" />
+            </td>
+        </tr>
+        <tr>
+            <th>password</th>
+            <td>
+                <input type="password" name="Password" />
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input type="submit" value="login" />
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                @if (Model.LoginSuccess)
+                {
+                    @Html.Raw("login success")
+                }
+                else
+                {
+                    @Html.Raw("login failed")
+                }
+            </td>
+        </tr>
+    </table>
+</form>
+
